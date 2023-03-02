@@ -21,13 +21,50 @@ $colors: (
     )
 );
 
+$black: #000;
+$white: #fff;
+$blue3: #7a99ac;
+$blue4: #dcf3f4;
+$gray: #f8f8f8;
+$gray1: #e5e5e5;
+$gray2: #9d9fa1;
+$gray3: #40474e;
+$gray4: #41474d;
+$gray5: #e7e6e5;
+$gray6: #f5f4f4;
+$gray7: #f9f9f9;
+$gray9: #f6f7f7;
+$purple2: #4d217d;
+
+$steel: #4b5058;
+$concrete: #989AA5;
+$fog: #d0d0ce;
+$poppy: #ed8b00;
+$games: #ff6a1b;
+$citrus: #f1c400;
+$avocado: #93c90e;
+$pine: #00873e;
+$marina: #00a3ad;
+$bayside: #5bc2e7;
+$deep_ocean: #0057b8;
+$grapevine: #6e3fa3;
+$cable_car: #ef3340;
+$future_blue: #4100ff;
+$jade: #005A59;
+$red: #F5564E;
+$golden-gate: #FF6A1B;
+$jade-tint: #00807F;
+$light-jade: #EEF8F8;
+
 $dir: '../..';
 $font-path: '#{$dir}/fonts';
 $image-path: '#{$dir}/images';
 
 $proximanova: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+$visby: 'Visby', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
 $base-font-sans-serif: $proximanova;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+$proxima: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
 
 // Body
 $base-text-color: color(black) !default;

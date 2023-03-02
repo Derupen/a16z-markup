@@ -37,6 +37,9 @@ $media-expressions: (
 // @import 'vendors/grid';
 
 // @import 'layouts/header';
-// @import 'layouts/common';
+
+@import 'layouts/common';
+@import 'components/podcast-episodes';
+@import 'components/gm';
 @import 'components/podcast-episodes';
 @import 'components/landing-page';
