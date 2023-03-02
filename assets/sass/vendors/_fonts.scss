@@ -2,6 +2,8 @@
 // Fontface
 // ---------------------------------------------------------===
 
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
 // Icomoon
 @include font-face("icomoon", "icomoon", ("#{$font-path}/icomoon/icomoon"), 400, normal, 36azv8 );
 
