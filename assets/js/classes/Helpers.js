@@ -77,6 +77,52 @@ export const SlickCarousel = () => {
             });
         }
     });
+
+    jQuery('.cm-featured-slider').each(function(){
+        var slider = jQuery(this);
+
+        if (!slider.hasClass('slick-initialized')) {
+            slider.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                rows: 0,
+                pauseOnHover: false,
+                dots: true,
+                mobileFirst: true,
+                responsive: [
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 1023,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        variableWidth: true
+                    }
+                }
+                ]
+            });
+        }
+    });
+
+    $('.cm-hero-slider').slick({
+        arrows: false,
+        rows: 0,
+        autoplay: true,
+        infinite: true,
+        dots: false,
+    });
 }
 
 export const niceSelect = () => {
