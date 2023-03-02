@@ -5,19 +5,29 @@ body {
 p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgroup, div, details, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, img, section, table, summary, video {margin: 0;}
 
 
-// .cm-intro-text,
-// .cm-featured,
-// .cm-marketplace,
-// .cm-team-section {
-//   display: none;
-// }
-
 
 .cm-hero {
   background-size: cover;
   background-position: center;
   margin-bottom: 150px;
   overflow: hidden;
+  color: #fff;
+  font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+  display: none;
+
+  .img-sm {
+    display: none;
+
+    @include media('<tablet') {
+      display: block;
+    }
+  }
+
+  .img-lg {
+    @include media('<tablet') {
+      display: none;
+    }
+  }
 
   .hero-slide {
     position: relative;
@@ -42,6 +52,14 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     margin: 0 0 67px;;
     width: 270px;
 
+    @include media('<desktop') {
+      width: 142px;
+    }
+
+    @include media('screen', '>=tablet') {
+      margin-bottom: 33px;
+    }
+
   }
 
   .container {
@@ -52,7 +70,6 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   }
 
   .cm-small-title {
-    font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
     font-weight: 600;
     font-size: 25px;
     letter-spacing: 0.25em;
@@ -63,6 +80,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
 
     @include media('<desktop') {
       font-size: 16px;
+    }
+
+    @include media('<tablet') {
+      margin-bottom: 1px;
     }
   }
 
@@ -77,6 +98,30 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     @include media('<desktop') {
       font-size: 48px;
       line-height: 1.0416;
+    }
+
+    @include media('<tablet') {
+      margin-bottom: 20px;
+    }
+
+    br {
+      @include media('<tablet') {
+        display: none;
+      }
+    }
+  }
+
+  .txt {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.1875;
+    max-width: 50%;
+    margin-bottom: 32px;
+    display: none;
+
+    @include media('<tablet') {
+      display: block;
+      max-width: 88%;
     }
   }
 
@@ -98,6 +143,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     width: 100%;
     position: relative;
     z-index: 2;
+
+    @include media('<tablet') {
+      margin-bottom: 73px;
+    }
   }
 
   .btn-red {
@@ -115,7 +164,6 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   }
 }
 
-
 .cm-intro-text {
   background: #F6EFE7;
   font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
@@ -125,7 +173,11 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   letter-spacing: -0.5px;
   padding: 113px 0 106px;
 
-  display: none;
+  @include media('<tablet') {
+    font-size: 16px;
+line-height: 1.3125;
+    padding: 52px 0;
+  }
 
   .container {
     max-width: 1458px;
@@ -144,6 +196,15 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     max-width: 48.2%;
     flex: 0 0 48.2%;
     padding: 15px 90px 15px 15px;
+
+    @include media('<widescreen') {
+      padding-right: 15px;
+    }
+
+    @include media('<desktop') {
+      max-width: none;
+      padding-bottom: 7px;
+    }
   }
 
   .cm-content {
@@ -157,6 +218,15 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     line-height: .957;
     font-weight: 500;
     color: #1B332D;
+
+    @include media('<widescreen') {
+      font-size: 70px;
+    }
+
+    @include media('<desktop') {
+      font-size: 48px;
+      line-height: 0.9167;
+    }
     
     span {
       color: #F5564E;
@@ -165,6 +235,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
 
   p {
     margin-bottom: 16px;
+
+    @include media('<tablet') {
+      margin-bottom: 22px;
+    }
   }
 
   .link-more {
@@ -200,6 +274,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   padding: 77px 0 100px;
   font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
 
+  @include media('<tablet') {
+    padding: 53px 0 64px
+  }
+
   .btn-red {
     background: #F5564E;
     text-transform: uppercase;
@@ -211,6 +289,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
 
   .cm-heading {
     margin-bottom: 64px;
+
+    @include media('<tablet') {
+      margin-bottom: 37px;
+    }
   }
 
   .cm-decor {
@@ -221,6 +303,14 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     width: 498px;
     z-index: -1;
     pointer-events: none;
+
+    @include media('<widescreen') {
+      width: 320px;
+    }
+
+    @include media('<desktop') {
+      display: none;
+    }
     
     img {
       width: 100%;
@@ -235,15 +325,28 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
       content: "";
       width: 438px;
       background: #99c8c8;
+
+      @include media('<widescreen') {
+        width: 250px;
+      }
     }
   }
 
-  h1 {
+  h2 {
     font-family: 'Rokkitt', serif;
     font-size: 90px;
     font-weight: 500;
     color: #1B332D;
     text-transform: capitalize;
+
+    @include media('<widescreen') {
+      font-size: 70px;
+    }
+
+    @include media('<desktop') {
+      font-size: 48px;
+      line-height: 0.9167;
+    }
   }
 
   .container {
@@ -269,6 +372,13 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     max-width: 454px;
     flex: 0 0 454px;
 
+    @include media('<desktop') {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 16px;
+      max-width: none;
+    }
+
     @include media('<tablet') {
       display: none;
     }
@@ -286,7 +396,8 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   font-weight: 600;
   margin-bottom: 23px;
 
-  h2 {
+  h3 {
+    font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
     font-size: 48px;
     line-height: 1.0833;
     font-weight: 700;
@@ -331,7 +442,7 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     z-index: -1;
   }
 
-  h2 {
+  h3 {
     font-size: 48px;
     line-height: 1.0833;
     font-weight: 700;
@@ -409,6 +520,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   overflow: hidden;
   margin: 0 -12px;
 
+  @include media('<tablet') {
+    margin: 0 4px;
+  }
+
   .cm-slide {
     max-width: 396px;
     flex: 0 0 396px;
@@ -479,13 +594,25 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     }
   }
 
-  h3 {
+  h4 {
     font-weight: 800;
     font-size: 24px;
     line-height: 1.2179;
     letter-spacing: -0.5px;
     margin-bottom: 8px;
 
+    @include media('<tablet') {
+      font-size: 18px;
+      line-height: 1.2222;
+      padding-right: 30px;
+      margin-bottom: 7px;
+    }
+  }
+
+  .txt {
+    @include media('<tablet') {
+      display: none;
+    }
   }
 
   .author {
@@ -493,6 +620,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     font-size: 20px;
     letter-spacing: -0.5px;
     flex: 1;
+
+    @include media('<tablet') {
+      font-size: 16px;
+    }
   }
   
   .cm-meta {
@@ -503,6 +634,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     .icon-headphone {
       font-size: 20px;
       margin: 1px 8px 0 0;
+
+      @include media('<tablet') {
+        font-size: 16px;
+      }
     }
   }
 
@@ -510,6 +645,11 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     border-bottom: 1px solid #1B332D;
     margin-bottom: 31px;
     padding-bottom: 31px;
+
+    @include media('<tablet') {
+      padding-bottom: 14px;
+      margin-bottom: 24px;
+    }
 
     &:last-child {
       border: none;
@@ -525,6 +665,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     letter-spacing: 1.5px;
     margin: 7px 0 0 5px;
     padding: 2px 13px;
+
+    @include media('<tablet') {
+      display: none;
+    }
 
     &.new {
       background: #F584B5;
@@ -549,6 +693,12 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   overflow: hidden;
   z-index: 1;
 
+  @include media('<tablet') {
+    font-size: 16px;
+    line-height: 1.2631;
+    padding: 64px 0 64px;
+  }
+
   .decor,
   .decor-01 {
     background-size: cover;
@@ -568,6 +718,14 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     right: auto;
     left: 45.6%;
     opacity: 0.95;
+
+    @include media('<widescreen') {
+      left: 38%;
+    }
+
+    @include media('<tablet') {
+      display: none;
+    }
   }
 
   .row {
@@ -575,6 +733,11 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     align-items: center;
     margin: -41px;
     min-height: 302px;
+
+    @include media('<tablet') {
+      min-height: 0;
+      display: block;
+    }
   }
 
   .container {
@@ -589,6 +752,16 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     color: #fff;
     letter-spacing: -0.5px;
     margin-bottom: 10px;
+
+    @include media('<widescreen') {
+      font-size: 40px;
+    }
+
+    @include media('<tablet') {
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
   }
 
   .cm-left-content {
@@ -603,6 +776,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     padding: 41px;
     position: relative;
     z-index: 2;
+
+    @include media('<tablet') {
+      display: none;
+    }
   }
 
   .btn-red {
@@ -618,6 +795,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   .txt {
     max-width: 610px;
     margin-bottom: 41px;
+
+    @include media('<tablet') {
+      margin-bottom: 22px;
+    }
   }
 }
 
@@ -628,6 +809,12 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
   line-height: 22px;
   color: #4B4F54;
   padding: 106px 0;
+
+  @include media('<tablet') {
+    font-size: 14px;
+    line-height: 1.2829;
+    padding: 64px 0;
+  }
 
   h2 ,
   h3 {
@@ -640,12 +827,27 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     font-size: 90px;
     line-height: 1;
     margin-bottom: 32px;
+
+     @include media('<widescreen') {
+      font-size: 70px;
+    }
+
+    @include media('<desktop') {
+      font-size: 48px;
+      line-height: 0.9167;
+      margin-bottom: 7px;
+    }
   }
 
   h3 {
     font-size: 50px;
     line-height: 1.1;
     margin-bottom: 42px;
+
+    @include media('<desktop') {
+      font-size: 34px;
+      margin-bottom: 31px;
+    }
   }
 
   .container {
@@ -656,8 +858,16 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     max-width: 1300px;
     margin-bottom: 91px;
 
+    @include media('<tablet') {
+      margin-bottom: 39px;
+    }
+
     .txt {
       margin-bottom: 28px;
+
+      @include media('<tablet') {
+        margin-bottom: 18px;
+      }
     }
   }
 
@@ -670,6 +880,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     font-weight: 800;
     font-size: 20px;
     text-decoration: none;
+
+    @include media('<tablet') {
+      font-size: 18px;
+    }
 
     &:after {
       position: absolute;
@@ -689,16 +903,30 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
 .cm-general-partner {
   margin-bottom: 100px;
 
+  @include media('<tablet') {
+    margin-bottom: 48px;
+  }
+
   .row {
     margin: -12px;
     display: flex;
     flex-wrap: wrap;
+
+    @include media('<tablet') {
+      display: block;
+      margin: -8px;
+    }
   }
 
   .col {
     padding: 12px;
     max-width: 50%;
     flex: 0 0 50%;
+
+    @include media('<tablet') {
+      max-width: none;
+      padding: 8px;
+    }
   }
 
   .cm-avatar {
@@ -707,6 +935,10 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
     .img {
       position: relative;
       padding-top: 78.5%;
+
+      @include media('<tablet') {
+        padding-top: 69.5%;
+      }
 
       > img {
         position: absolute;
@@ -730,6 +962,15 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
       transform: rotate(-90deg);
       transform-origin: 13px -34px;
 
+      @include media('<widescreen') {
+        font-size: 60px;
+      }
+
+      @include media('<tablet') {
+        font-size: 49px;
+        transform-origin: 6px -12px;
+      }
+
       span {
         display: block;
         padding: 2px 0 0 15px;
@@ -748,16 +989,34 @@ p, ul, ol, blockquote, q, pre, address, area, article, aside, audio, code, colgr
       right: 15px;
       font-size: 20px;
 
+      @include media('<tablet') {
+        font-size: 11px;
+          top: 20px;
+right: 20px;
+      }
+
       li {
         padding: 10px 18px;
+
+        @include media('<tablet') {
+          padding: 0 0 0 17px;
+        }
       }
 
       .icon-twitter {
         font-size: 18px;
+
+        @include media('<tablet') {
+          font-size: 11px;
+        }
       }
 
       .icon-clubhouse {
         font-size: 16px;
+
+        @include media('<tablet') {
+          font-size: 10px;
+        }
       }
 
       a {
