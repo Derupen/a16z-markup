@@ -909,24 +909,22 @@ body {
 }
 
 .gl-team-list {
-	margin: 0;
-	padding: 0;
-	letter-spacing: normal;
 	position: relative;
 	z-index: 100;
 	display: flex;
 	flex-wrap: wrap;
 	color: #082D42;
 
-	li {
+	.member {
 		width: 25%;
 		padding: 25px 20px;
 	}
 
-	.member {
+	.holder {
 		cursor: pointer;
 		width: 100%;
 		transition: all 0.3s linear;
+		position: relative;
 
 		&:hover {
 
@@ -939,6 +937,66 @@ body {
 
 				img {
 					filter: none;
+				}
+			}
+
+			.name:after {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.social-network-list {
+		position: absolute;
+		right: -18px;
+		top: 26px;
+		width: 36px;
+
+		li {
+
+			a {
+				width: 36px;
+				height: 36px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+				color: $white;
+				background: #93ca15;
+				border: 1px solid #93ca15;
+				transition: all 0.3s linear;
+
+				&:hover {
+					background: $white;
+					color: #a7e31b;
+				}
+			}
+
+			&:nth-child(2) {
+
+				a {
+					background: #9cd518;
+					border-color: #9cd518;
+
+					&:hover {
+						background: $white;
+						color: #9cd518;
+					}
+				}
+			}
+
+			&:nth-child(3) {
+
+				a {
+					background: #a7e31b;
+					border-color: #a7e31b;
+
+					&:hover {
+						background: $white;
+						color: #a7e31b;
+					}
 				}
 			}
 		}
@@ -978,8 +1036,8 @@ body {
 			img {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
-				object-position: top center;
+				object-fit: contain;
+				object-position: bottom center;
 				filter: grayscale(1);
 				transition: filter 0.3s linear;
 			}
@@ -987,12 +1045,28 @@ body {
 	}
 
 	.name {
-		display: block;
+		display: inline-block;
+		vertical-align: top;
 		font-size: 24px;
 		line-height: 1;
 		color: #082d42;
 		letter-spacing: -0.5px;
 		font-weight: 800;
+		position: relative;
+		padding-right: 26px;
+
+		&:after {
+			content: "";
+			background: url('/wp-content/themes/a16z-2015/client/images/gl/arrow-t-a.svg') no-repeat 0 0 / 16px 16px;
+			position: absolute;
+			right: 0;
+			top: 5px;
+			width: 16px;
+			height: 16px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s linear;
+		}
 	}
 
 	.role {
@@ -1000,5 +1074,10 @@ body {
 		font-size: 16px;
 		line-height: 1.125;
 		letter-spacing: -0.005em;
+	}
+
+	.focus-area {
+		margin-top: 18px;
+		color: #4b5058;
 	}
 }
