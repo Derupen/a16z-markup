@@ -136,3 +136,20 @@ export const niceSelect = () => {
     }
   });
 }
+
+export const inlineSVG = () => {
+    $('.inline-this-svg').each(function () {
+    const el = $(this);
+    const img = el.find('> img');
+    if (0 < img.length) {
+      $.get(img[0].src, (svgDoc) => {
+        const svgEl =
+          document.importNode(svgDoc.documentElement, true);
+        el.html(svgEl);
+        // const viewBoxHeight = ('' !== svgEl.viewBox.baseVal.height)
+        //   ? svgEl.viewBox.baseVal.height : '';
+        // el.find('svg').attr('height', viewBoxHeight);
+      });
+    }
+  });
+}
