@@ -78,3 +78,61 @@ export const SlickCarousel = () => {
         }
     });
 }
+
+export const niceSelect = () => {
+    $('[data-select]').each(function () {
+    const item = $(this);
+    const selectDrop = item.next();
+    const linkItems = selectDrop.find('a');
+
+    item.click(function (e) {
+      e.preventDefault();
+      $(this).toggleClass('active').next().toggleClass('active');
+    });
+
+    linkItems.on('click', function (e) {
+      e.preventDefault();
+      const el = $(this);
+      item.text(el.text());
+      selectDrop.removeClass('active');
+      item.removeClass('active').addClass('selected');
+
+      selectDrop.find('li').removeClass('active');
+      $(this).parent().addClass('active');
+      const filerSelect = el.data('filterSelect');
+      if ('undefined' !== typeof filerSelect) {
+        applySelectFilter(filerSelect);
+      }
+    });
+
+    if (selectDrop.children().hasClass('active')) {
+      item
+        .text($(this).next().find('.active a').text())
+        .addClass('selected');
+    }
+  });
+
+    $('[data-select-nav]').each(function () {
+    const item = jQuery(this);
+    const selectDrop = item.next();
+    const linkItems = selectDrop.find('a');
+
+    item.attr({ 'data-outside': '', 'data-more': '' });
+
+    linkItems.on('click', function (e) {
+      e.preventDefault();
+      item.text(jQuery(this).text());
+      selectDrop.slideUp(200);
+      item.removeClass('active').addClass('selected');
+
+      selectDrop.find('li').removeClass('active');
+      jQuery(this).parent().addClass('active');
+    });
+
+    if (selectDrop.children().hasClass('active')) {
+      item
+        .text(jQuery(this).next().find('.active a').text())
+        .addClass('selected');
+    }
+  });
+}
