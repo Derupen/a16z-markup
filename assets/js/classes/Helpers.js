@@ -123,6 +123,15 @@ export const SlickCarousel = () => {
         infinite: true,
         dots: false,
     });
+
+    $('.gl-latest-slider').slick({
+        arrows: false,
+        rows: 0,
+        // autoplay: true,
+        infinite: false,
+        dots: true,
+        centerPadding: '50px'
+    });
 }
 
 export const niceSelect = () => {

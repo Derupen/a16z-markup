@@ -61,10 +61,10 @@ $font-path: '#{$dir}/fonts';
 $image-path: '#{$dir}/images';
 
 $proximanova: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
-$visby: 'Visby', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
 $base-font-sans-serif: $proximanova;
 $base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
 $proxima: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+$visby-slab-cf: 'Visby Slab CF', $base-font-serif;
 
 // Body
 $base-text-color: color(black) !default;

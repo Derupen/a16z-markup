@@ -17,14 +17,20 @@
 @include font-face("Proxima Nova Extra Bold", "Proxima Nova", ("#{$font-path}/ProximaNova/ProximaNova-Extrabld"), 800, normal );
 @include font-face("Proxima Nova Extra Bold Italic", "Proxima Nova", ("#{$font-path}/ProximaNova/ProximaNova-ExtrabldIt"), 800, italic );
 
-// Visby
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFThinRegular"), 300, normal );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFThinItalic"), 300, italic );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFRegularRegular"), 400, normal );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFRegularItalic"), 400, italic );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFMediumRegular"), 500, normal );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFMediumItalic"), 500, italic );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFDemiBoldRegular"), 600, normal );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFDemiBoldItalic"), 600, italic );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFBoldRegular"), 700, normal );
-@include font-face("Visby", "Visby", ("#{$font-path}/visby/FONTSPRINGDEMO-VisbySlabCFBoldItalic"), 700, italic );
+// Visby Slab CF
+@include font-face("Visby Slab CF Thin", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Thin"), 100, normal );
+@include font-face("Visby Slab CF Thin Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-ThinOblique"), 100, italic );
+@include font-face("Visby Slab CF Light", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Light"), 300, normal );
+@include font-face("Visby Slab CF Light Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-LightOblique"), 300, italic );
+@include font-face("Visby Slab CF Regular", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Regular"), 400, normal );
+@include font-face("Visby Slab CF Regular Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-RegularOblique"), 400, italic );
+@include font-face("Visby Slab CF Medium", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Medium"), 500, normal );
+@include font-face("Visby Slab CF Medium Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-MediumOblique"), 500, italic );
+@include font-face("Visby Slab CF Demi Bold", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-DemiBold"), 600, normal );
+@include font-face("Visby Slab CF Demi Bold Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-DemiBoldOblique"), 600, italic );
+@include font-face("Visby Slab CF Bold", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Bold"), 700, normal );
+@include font-face("Visby Slab CF Bold Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-BoldOblique"), 700, italic );
+@include font-face("Visby Slab CF Extra Bold", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-ExtraBold"), 800, normal );
+@include font-face("Visby Slab CF Extra Bold Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-ExtraBoldOblique"), 800, italic );
+@include font-face("Visby Slab CF Heavy", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-Heavy"), 900, normal );
+@include font-face("Visby Slab CF Heavy Oblique", "Visby Slab CF", ("#{$font-path}/visby-slab-cf/VisbySlabCF-HeavyOblique"), 900, italic );

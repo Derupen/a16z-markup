@@ -76,12 +76,12 @@ body {
 	}
 
 	.slogan-txt {
-		font: 300 65px/1.23 $visby;
+		font: 300 65px/1.23 $visby-slab-cf;
 		letter-spacing: -0.5px;
 	}
 
 	h1 {
-		font: 300 160px/1 $visby;
+		font: 300 160px/1 $visby-slab-cf;
 		color: #082D42;
 		letter-spacing: 10px;
 	}
@@ -143,6 +143,15 @@ body {
 	&.button-white {
 		background: $white;
 		color: $avocado;
+	}
+
+	&.button-blue {
+		background: $bayside;
+		color: $white;
+
+		&:hover {
+			background: darken($bayside, 10%);
+		}
 	}
 }
 
@@ -224,7 +233,7 @@ body {
 		margin-bottom: 70px;
 
 		h2 {
-			font: 300 60px/1.133 $visby;
+			font: 300 60px/1.133 $visby-slab-cf;
 			display: inline;
 			vertical-align: bottom;
 			color: #082D42;
@@ -532,7 +541,7 @@ body {
 			}
 
 			.percentage {
-				font: 900 64px/1 $visby;
+				font: 900 64px/1 $visby-slab-cf;
 				letter-spacing: -0.59px;
 			}
 		}
@@ -599,33 +608,6 @@ body {
 
 			p {
 				margin-bottom: 26px;
-			}
-
-			.read-more-link {
-				text-decoration: none;
-				color: $avocado;
-				font-size: 20px;
-				line-height: 1.2;
-				font-weight: 800;
-				letter-spacing: -0.01em;
-				padding-right: 30px;
-				position: relative;
-
-				&:hover:after {
-					right: -5px;
-				}
-
-				&:after {
-					content: "";
-					background: url('/wp-content/themes/a16z-2015/client/images/gl/arrow-rm-right.svg') no-repeat 0 0/ 20px 15px;
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					right: 0;
-					width: 20px;
-					height: 15px;
-					transition: right 0.3s linear;
-				}
 			}
 
 			.avatar {
@@ -700,33 +682,6 @@ body {
 
 			p {
 				margin-bottom: 26px;
-			}
-
-			.watch-now-link {
-				text-decoration: none;
-				color: $white;
-				font-size: 20px;
-				line-height: 1.2;
-				font-weight: 800;
-				letter-spacing: -0.01em;
-				padding-right: 30px;
-				position: relative;
-
-				&:hover:after {
-					right: -5px;
-				}
-
-				&:after {
-					content: "";
-					background: url('/wp-content/themes/a16z-2015/client/images/gl/arrow-rm-right-white.svg') no-repeat 0 0/ 20px 15px;
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					right: 0;
-					width: 20px;
-					height: 15px;
-					transition: right 0.3s linear;
-				}
 			}
 
 			.avatar {
@@ -818,7 +773,7 @@ body {
 	}
 
 	h3 {
-		font: 700 48px/1.083 $visby;
+		font: 700 48px/1.083 $visby-slab-cf;
 		color: $avocado;
 		margin-bottom: 28px;
 	}
@@ -831,7 +786,6 @@ body {
 .gl-section-group {
 	background: url('/wp-content/themes/a16z-2015/client/images/gl/bg-grad.svg') no-repeat 0 0 / cover;
 	margin-top: -51px !important;
-	padding-top: 50px;
 	position: relative;
 
 	&:before {
@@ -845,7 +799,7 @@ body {
 	}
 
 	.inner {
-		min-height: 700px;
+		padding: 50px 0;
 
 		.animated-border {
 			border-color: #082D42;
@@ -853,7 +807,7 @@ body {
 	}
 
 	h2 {
-		font: 500 60px/1.133 $visby;
+		font: 500 60px/1.133 $visby-slab-cf;
 	}
 }
 
@@ -889,7 +843,7 @@ body {
 			margin-bottom: 25px;
 
 			h2 {
-				font: 300 60px/1.133 $visby;
+				font: 300 60px/1.133 $visby-slab-cf;
 				display: inline;
 				vertical-align: bottom;
 				color: #082D42;
@@ -1081,3 +1035,207 @@ body {
 		color: #4b5058;
 	}
 }
+
+.gtgm-cta {
+	background: url('/wp-content/themes/a16z-2015/client/images/gl/banner-gtgm.svg') no-repeat 0 0 / cover;
+	display: flex;
+	min-height: 360px;
+	align-items: center;
+	padding: 50px 0;
+	color: $white;
+	font: 500 20px/1 $proxima;
+	letter-spacing: -0.5px;
+
+	.container {
+		width: 100%;
+	}
+
+	h2 {
+		font: 700 60px/1 $visby-slab-cf;
+		color: $white;
+		margin-bottom: 54px;
+	}
+
+	.txt-wrap {
+		max-width: 414px;
+		margin-bottom: 34px;
+	}
+}
+
+.gl-latest-from-growth {
+
+	.heading {
+		text-align: center;
+		margin-bottom: 63px;
+
+		h2 {
+			font: 500 60px/1.133 $visby-slab-cf;
+			display: inline;
+			vertical-align: bottom;
+			color: #082D42;
+
+			&:after {
+				content: "";
+				display: inline-block;
+				vertical-align: bottom;
+				width: 10px;
+				height: 10px;
+				background: $avocado;
+				margin: 0 0 9px 10px;
+			}
+		}
+	}
+}
+
+.gl-latest-slider-wrap {
+	margin: 0 -25px;
+	position: relative;
+	padding-bottom: 50px;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		left: calc(100% + 35px);
+		right: -9999px;
+		background: linear-gradient(to right, rgba(248,250,241,1) 0%,rgba(248,250,241,0.99) 1%,rgba(15,255,255,0) 100%);
+		top: 1px;
+		bottom: 51px;
+		width: 90px;
+		z-index: 2;
+	}
+
+	&:after {
+		left: calc(100% + 125px);
+		width: auto;
+		opacity: 0.5;
+	}
+
+	.slick-dots {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		max-width: 964px;
+		margin: 0 auto;
+
+		li {
+			width: 100%;
+			padding: 0 11px;
+
+			&.slick-active button,
+			button:hover {
+				background: $avocado;
+			}
+
+			button {
+				font-size: 0;
+				line-height: 0;
+				width: 100%;
+				height: 5px;
+				background: #d9d9d9;
+				border: none;
+				transition: background 0.3s linear;
+			}
+		}
+	}
+}
+
+.gl-latest-slider {
+	max-width: 810px;
+	position: static;
+
+	.slick-list {
+		overflow: visible;
+	}
+
+	.slick-slide {
+		padding: 0 25px;
+	}
+
+	.slick-list,
+	.slick-track,
+	.slick-slide {
+		display: flex;
+	}
+
+	.box {
+		background: $white;
+		border: 1px solid #7eb387;
+		padding: 28px 28px 88px;
+		font-size: 16px;
+		line-height: 1;
+		position: relative;
+
+		h3 {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 1.12;
+			color: #082d42;
+			margin-bottom: 13px;
+		}
+
+		.author {
+			display: inline-block;
+			font-size: 20px;
+			line-height: 1;
+			color: $concrete;
+			font-weight: 600;
+			letter-spacing: -0.5px;
+		}
+
+		.txt {
+			margin-top: 20px;
+		}
+
+		.btm {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 10px 28px 30px;
+		}
+	}
+}
+
+.gl-more-link {
+	text-decoration: none;
+	font-size: 20px;
+	line-height: 1.2;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	padding-right: 30px;
+	position: relative;
+
+	&:hover:after {
+		right: -5px;
+	}
+
+	&:after {
+		content: "\e940";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		font: 12px/1 "icomoon";
+		transition: right 0.3s linear;
+	}
+
+	&.is-green {
+		color: $avocado;
+	}
+
+	&.is-white {
+		color: $white;
+	}
+
+	&.sm {
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+	}
+}
+
