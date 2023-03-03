@@ -21,6 +21,11 @@ body {
 
 	.container {
 		max-width: 1456px;
+
+		@include media('<tablet') {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 	}
 
 	#main {
@@ -28,6 +33,11 @@ body {
 		z-index: 1;
 		padding-top: 65px;
 		margin-top: -65px;
+
+		@include media('<tablet') {
+			padding-top: 20px;
+			margin-top: -20px;
+		}
 
 		&:before {
 			content: "";
@@ -52,6 +62,8 @@ body {
 
 	@include media('<widescreen') {
 		min-height: 600px;
+		display: flex;
+		align-items: center;
 	}
 
 	@include media('<desktop') {
@@ -81,6 +93,10 @@ body {
 	.logo-wrap {
 		width: 176px;
 		margin: 0 auto 41px;
+
+		@include media('<tablet') {
+			width: 100px;
+		}
 	}
 
 	.slogan-txt {
@@ -91,6 +107,15 @@ body {
 
 		@include media('<widescreen') {
 			font-size: 50px;
+		}
+
+		@include media('<desktop') {
+			font-size: 40px;
+		}
+
+		@include media('<tablet') {
+			font-size: 30px;
+			margin-bottom: 45px;
 		}
 	}
 
@@ -104,7 +129,11 @@ body {
 		}
 
 		@include media('<desktop') {
-			padding: 74px;
+			font-size: 74px;
+		}
+
+		@include media('<tablet') {
+			font-size: 40px;
 		}
 	}
 }
@@ -114,6 +143,10 @@ body {
 	box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
 	padding: 17px 0;
 	margin-bottom: 107px;
+
+	@include media('<tablet') {
+		display: none;
+	}
 
 	.container {
 		display: flex;
@@ -129,11 +162,19 @@ body {
 			flex-wrap: wrap;
 			font: 600 18px/1.22 $proxima;
 
+			@include media('<desktop') {
+				font-size: 16px;
+			}
+
 			li {
 
 				a:not(.button) {
 					text-decoration: none;
 					color: $bayside;
+
+					&:hover {
+						color: $avocado;
+					}
 				}
 			}
 		}
@@ -183,12 +224,15 @@ body {
 		margin-top: -1px;
 	}
 
-	.inner {
-		position: relative;
+	> .container {
 
-		@media only screen and (max-width: 1550px) {
-			padding-left: 20px;
-			padding-right: 20px;
+		> .inner {
+			position: relative;
+
+			@media only screen and (max-width: 1550px) {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
 		}
 	}
 }
@@ -204,6 +248,11 @@ body {
 	pointer-events: none;
 
 	@media only screen and (max-width: 1550px) {
+		left: 10px;
+		right: 10px;
+	}
+
+	@include media('<tablet') {
 		left: 0;
 		right: 0;
 	}
@@ -217,6 +266,13 @@ body {
 	left: 0;
 	top: -6px;
 	z-index: 2;
+
+	@include media('<desktop') {
+		width: 40px;
+		height: 4px;
+		top: -4px;
+		left: 45px;
+	}
 }
 
 .gl-thesis {
@@ -231,6 +287,10 @@ body {
 		padding: 120px 0 153px;
 		text-align: center;
 		position: relative;
+
+		@include media('<tablet') {
+			padding: 80px 0;
+		}
 	}
 
 	.text-row {
@@ -272,6 +332,11 @@ body {
 		flex-wrap: wrap;
 		margin-bottom: 44px;
 		position: relative;
+
+		@include media('<tablet') {
+			position: relative;
+			padding-top: 50px;
+		}
 	}
 
 	.select-col {
@@ -281,11 +346,20 @@ body {
 		@include media('<widescreen') {
 			min-width: 1px;
 		}
+
+		@include media('<tablet') {
+			width: 100%;
+			padding-right: 0;
+		}
 	}
 
 	.select-wrap {
 		width: 325px;
 		position: relative;
+
+		@include media('<tablet') {
+			width: 100%;
+		}
 
 		.opener {
 			width: 100%;
@@ -383,6 +457,21 @@ body {
 		flex: 1;
 		position: relative;
 
+		@include media('<desktop') {
+			flex: none;
+			width: 50%;
+			margin-bottom: 30px;
+		}
+
+		@include media('<tablet') {
+			width: 100%;
+			margin: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
 		label {
 			width: 34px;
 			height: 24px;
@@ -412,9 +501,30 @@ body {
 	.button-col {
 		padding-left: 64px;
 
+		@include media('<desktop') {
+			width: 50%;
+			padding-left: 30px;
+		}
+
+		@include media('<tablet') {
+			width: 100%;
+			padding: 0;
+			margin-top: 20px;
+			text-align: center;
+		}
+
 		.button {
 			min-width: 217px;
 			min-height: 40px;
+
+			@include media('<desktop') {
+				width: 100%;
+			}
+
+			@include media('<tablet') {
+				width: auto;
+				min-width: 206px;
+			}
 		}
 	}
 }
@@ -432,6 +542,10 @@ body {
 		grid-template-columns: repeat(3,1fr);
 	}
 
+	@include media('<tablet') {
+		grid-template-columns: repeat(2,1fr);
+	}
+
 	.grid-item {
 		cursor: pointer;
 
@@ -444,6 +558,10 @@ body {
 
 			@include media('<desktop') {
 				grid-column: 1/4;
+			}
+
+			@include media('<tablet') {
+				grid-column: 1/3;
 			}
 		}
 
@@ -461,18 +579,26 @@ body {
 			@include media('<desktop') {
 				grid-column: 2/4;
 			}
+
+			@include media('<tablet') {
+				grid-column: 1/3;
+			}
 		}
 
 		&.width-md-left {
 			grid-column: 1/4;
 
 			@include media('<widescreen') {
-				grid-column: 1/3;
+				grid-column: 1/4;
 			}
 
 			@include media('<desktop') {
 				grid-column: 1/4;
 				grid-row: span 2;
+			}
+
+			@include media('<tablet') {
+				grid-column: 1/3;
 			}
 		}
 
@@ -485,6 +611,10 @@ body {
 
 			@include media('<desktop') {
 				grid-column: 1/4;
+			}
+
+			@include media('<tablet') {
+				grid-column: 1/3;
 			}
 		}
 
@@ -506,6 +636,10 @@ body {
 			position: relative;
 			overflow: hidden;
 			padding: 20px;
+
+			@include media('<tablet') {
+				min-height: 150px;
+			}
 
 			&:hover {
 				z-index: 100;
@@ -548,6 +682,7 @@ body {
 				svg,
 				path {
 					transition: fill 0.3s linear;
+					max-width: 100%;
 				}
 			}
 
@@ -589,6 +724,11 @@ body {
 				font-size: 18px;
 			}
 
+			@include media('<tablet') {
+				display: block;
+				text-align: left;
+			}
+
 			&.bg-blue {
 				background: #047DBD;
 			}
@@ -603,11 +743,20 @@ body {
 				@include media('<widescreen') {
 					width: 120px;
 				}
+
+				@include media('<tablet') {
+					width: 100%;
+					margin-bottom: 20px;
+				}
 			}
 
 			.right {
 				flex: 1;
 				padding-left: 15px;
+
+				@include media('<tablet') {
+					padding-left: 0;
+				}
 			}
 
 			.percentage {
@@ -643,6 +792,14 @@ body {
 				position: relative;
 				z-index: 3;
 
+				@include media('<desktop') {
+					align-items: flex-end;
+				}
+
+				@include media('<tablet') {
+					display: block;
+				}
+
 				&:before,
 				&:after {
 					content: "";
@@ -670,7 +827,7 @@ body {
 					z-index: 10;
 
 					@include media('<widescreen') {
-						padding: 20px 40px;
+						padding: 40px;
 					}
 
 					.wrap {
@@ -705,6 +862,14 @@ body {
 				@include media('<widescreen') {
 					width: 50%;
 				}
+
+				@include media('<desktop') {
+					position: static;
+				}
+
+				@include media('<tablet') {
+					float: right;
+				}
 			}
 		}
 
@@ -722,12 +887,28 @@ body {
 			color: $white;
 			height: calc(100% + 1px);
 
+			@include media('<desktop') {
+				font-size: 32px;
+			}
+
+			@include media('<tablet') {
+				font-size: 26px;
+			}
+
 			.inner {
 				width: 100%;
 				display: flex;
 				align-items: center;
 				position: relative;
 				z-index: 3;
+
+				@include media('<desktop') {
+					align-items: flex-end;
+				}
+
+				@include media('<tablet') {
+					display: block;
+				}
 
 				&:before,
 				&:after {
@@ -755,6 +936,10 @@ body {
 					position: relative;
 					z-index: 10;
 
+					@include media('<widescreen') {
+						padding: 40px;
+					}
+
 					.wrap {
 						max-width: 480px;
 					}
@@ -768,6 +953,14 @@ body {
 				letter-spacing:  -1px;
 				font-weight: 700;
 				margin-bottom: 15px;
+
+				@include media('<desktop') {
+					font-size: 32px;
+				}
+
+				@include media('<tablet') {
+					font-size: 28px;
+				}
 			}
 
 			p {
@@ -779,6 +972,15 @@ body {
 				right: 0;
 				bottom: 0;
 				z-index: -1;
+
+				@include media('<desktop') {
+					position: relative;
+					width: 50%;
+				}
+
+				@include media('<tablet') {
+					float: right;
+				}
 			}
 
 			.btn-play {
@@ -849,6 +1051,16 @@ body {
 	line-height: 1.0667;
 	font-weight: 300;
 
+	@include media('<desktop') {
+		padding: 40px;
+		font-size: 24px;
+	}
+
+	@include media('<tablet') {
+		padding: 40px 20px;
+		font-size: 20px;
+	}
+
 	&:after {
 		background: url(/wp-content/themes/a16z-2015/client/images/gl/illustrator-cta.svg) no-repeat 0 0 / cover;
 		left: auto;
@@ -866,6 +1078,15 @@ body {
 		font: 700 48px/1.083 $visby-slab-cf;
 		color: $avocado;
 		margin-bottom: 28px;
+
+		@include media('<desktop') {
+			font-size: 40px;
+		}
+
+		@include media('<tablet') {
+			font-size: 32px;
+		}
+
 	}
 
 	p {
@@ -886,12 +1107,20 @@ body {
 		left: 0;
 		background: linear-gradient(179.27deg, #082D42 -2.54%, #0660A1 5.02%, rgba(214, 229, 181, 0.2) 78.2%);
 		z-index: 1;
+
+		@include media('<desktop') {
+			top: -63px;
+		}
 	}
 
 	&:after {
 		background: url('/wp-content/themes/a16z-2015/client/images/gl/bg-grad.svg') no-repeat 50% -20% / cover;
 		z-index: 2;
 		opacity: 0.5;
+
+		@include media('<desktop') {
+			content: none;
+		}
 	}
 
 	.inner {
@@ -900,27 +1129,42 @@ body {
 		position: relative;
 		z-index: 3;
 
+		@include media('<desktop') {
+			padding-top: 42px;
+		}
+
 		.animated-border {
 			border-color: #082D42;
 		}
-	}
-
-	h2 {
-		font: 500 60px/1.133 $visby-slab-cf;
 	}
 }
 
 .gl-operating {
 	padding: 22px 0 25px;
 
+	@include media('<desktop') {
+		padding: 0 0 96px;
+	}
+
 	.heading {
 		max-width: 1000px;
 		margin: 0 auto 112px;
 		text-align: center;
 		color: $white;
+		font-size: 18px;
+		line-height: 1.111;
+
+		@include media('<desktop') {
+			max-width: 584px;
+			margin-bottom: 93px;
+		}
 
 		.h-wrap {
 			margin-bottom: 30px;
+
+			@include media('<desktop') {
+				min-height: 42px;
+			}
 		}
 	}
 }
@@ -930,6 +1174,10 @@ body {
 	.inner {
 		padding-top: 70px;
 		padding-bottom: 142px;
+
+		@include media('<tablet') {
+			padding-bottom: 62px;
+		}
 	}
 
 	.heading {
@@ -963,6 +1211,10 @@ body {
 	color: #082D42;
 	margin: -30px -20px;
 
+	@include media('<tablet') {
+		margin: -15px -10px;
+	}
+
 	.member {
 		width: 25%;
 		padding: 30px 20px;
@@ -973,6 +1225,10 @@ body {
 
 		@include media('<desktop') {
 			width: 50%;
+		}
+
+		@include media('<tablet') {
+			padding: 15px 10px;
 		}
 	}
 
@@ -1009,6 +1265,12 @@ body {
 		top: 31px;
 		width: 36px;
 
+		@include media('<tablet') {
+			right: -10px;
+			width: 20px;
+			top: 22px;
+		}
+
 		li {
 
 			a {
@@ -1024,6 +1286,12 @@ body {
 				border: 1px solid #93ca15;
 				transition: all 0.3s linear;
 				font-size: 20px;
+
+				@include media('<tablet') {
+					width: 20px;
+					height: 22px;
+					font-size: 12px;
+				}
 
 				&:hover {
 					background: $white;
@@ -1066,6 +1334,11 @@ body {
 		background: #f6f7f7;
 		transition: background-color 0.3s linear;
 		margin-bottom: 24px;
+
+		@include media('<tablet') {
+			padding-top: 93.9%;
+			margin-bottom: 20px;
+		}
 
 		.illustration {
 			position: absolute;
@@ -1112,6 +1385,11 @@ body {
 		position: relative;
 		padding-right: 26px;
 
+		@include media('<tablet') {
+			font-size: 18px;
+			padding-right: 13px;
+		}
+
 		&:after {
 			content: "";
 			background: url('/wp-content/themes/a16z-2015/client/images/gl/arrow-t-a.svg') no-repeat 0 0 / 16px 16px;
@@ -1123,6 +1401,12 @@ body {
 			opacity: 0;
 			visibility: hidden;
 			transition: all 0.3s linear;
+
+			@include media('<tablet') {
+				background-size: 8px 8px;
+				width: 8px;
+				height: 8px;
+			}
 		}
 	}
 
@@ -1131,6 +1415,11 @@ body {
 		font-size: 16px;
 		line-height: 1.125;
 		letter-spacing: -0.005em;
+
+		@include media('<tablet') {
+			font-size: 14px;
+			margin-top: -5px;
+		}
 	}
 
 	.focus-area {
@@ -1149,19 +1438,52 @@ body {
 	font: 500 20px/1 $proxima;
 	letter-spacing: -0.5px;
 
+	@include media('<desktop') {
+		font-size: 18px;
+	}
+
+	@include media('<tablet') {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	@include media('<tablet') {
+		background-image: url('/wp-content/themes/a16z-2015/client/images/gl/banner-gtgm-mob.svg');
+		background-position: 50% 50%;
+		text-align: center;
+		min-height: 308px;
+	}
+
 	.container {
 		width: 100%;
+
+		@include media('<tablet') {
+			padding: 0 40px;
+		}
 	}
 
 	h2 {
 		font: 700 60px/1 $visby-slab-cf;
 		color: $white;
 		margin-bottom: 42px;
+
+		@include media('<desktop') {
+			font-size: 40px;
+			margin-bottom: 20px;
+		}
+
+		@include media('<tablet') {
+			font-size: 28px;
+		}
 	}
 
 	.txt-wrap {
 		max-width: 414px;
 		margin-bottom: 37px;
+
+		@include media('<desktop') {
+			margin-bottom: 20px;
+		}
 	}
 
 	.bn {
@@ -1198,6 +1520,14 @@ body {
 .gl-latest-slider-wrap {
 	position: relative;
 
+	@include media('<desktop') {
+		padding-left: 24px;
+	}
+
+	@include media('<tablet') {
+		padding-left: 0;
+	}
+
 	&:before,
 	&:after {
 		content: "";
@@ -1223,6 +1553,12 @@ body {
 		margin: 0 -25px;
 		position: relative;
 		padding-bottom: 59px;
+
+		@include media('<desktop') {
+			margin: 0 -15px 0 -10px;
+			overflow: hidden;
+			padding-bottom: 39px;
+		}
 
 		&:after,
 		&:before {
@@ -1255,9 +1591,24 @@ body {
 		max-width: 867px;
 		margin: 0 auto;
 
+		@include media('<desktop') {
+			max-width: 338px;
+		}
+
+		@include media('<tablet') {
+			max-width: none;
+			width: 100%;
+			padding: 0 10px;
+		}
+
+
 		li {
 			width: 100%;
 			padding: 0 11px;
+
+			@include media('<desktop') {
+				padding: 0 4px;
+			}
 
 			&.slick-active button,
 			button:hover {
@@ -1281,12 +1632,24 @@ body {
 	max-width: 810px;
 	position: static;
 
+	@include media('<desktop') {
+		max-width: 358px;
+	}
+
+	@include media('<tablet') {
+		max-width: none;
+	}
+
 	.slick-list {
 		overflow: visible;
 	}
 
 	.slick-slide {
 		padding: 0 25px;
+
+		@include media('<desktop') {
+			padding: 0 10px;
+		}
 	}
 
 	.slick-list,
@@ -1304,9 +1667,13 @@ body {
 		position: relative;
 		transition: box-shadow 0.3s linear;
 
-		&:hover {
-			box-shadow: 0px 0px 20px 5px rgba(75, 79, 84, 0.2);
+		@include media('<desktop') {
+			padding: 31px 28px 74px;
 		}
+
+		// &:hover {
+		// 	box-shadow: 0px 0px 20px 5px rgba(75, 79, 84, 0.2);
+		// }
 
 		h3 {
 			font-weight: 700;
@@ -1314,6 +1681,11 @@ body {
 			line-height: 1.12;
 			color: #082d42;
 			margin-bottom: 5px;
+
+			@include media('<desktop') {
+				font-size: 20px;
+				line-height: 1.25;
+			}
 
 			a {
 				color: #082D42;
@@ -1337,6 +1709,10 @@ body {
 
 		.txt {
 			margin-top: 21px;
+
+			@include media('<desktop') {
+				line-height: 1.1625;
+			}
 		}
 
 		.btm {
@@ -1345,6 +1721,10 @@ body {
 			left: 0;
 			right: 0;
 			padding: 10px 28px 30px;
+
+			@include media('<desktop') {
+				padding: 0 28px 17px;
+			}
 		}
 	}
 }
@@ -1399,29 +1779,64 @@ body {
 
 	.tiles-wrapper {
 		width: 100%;
-		padding-top: 163.73%;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 
 		&:after {
 			content: "";
 			position: absolute;
-			top: 6.1%;
+			top: 5.9%;
 			bottom: 0;
 			left: 10.2%;
 			right: 0;
 			background: url('/wp-content/themes/a16z-2015/client/images/gl/decor.png') no-repeat 0 0;
 			z-index: -1;
+
+			@include media('<desktop') {
+				content: none;
+			}
+		}
+
+		@include media('<desktop') {
+			padding-top: 0 !important;
 		}
 	}
 
 	.tile {
-		margin: -1px;
+		margin: -1px -1px 0 0;
 		width: 36.48%;
-		position: relative;
 		position: absolute;
 		top: 0;
+
+		@include media('<desktop') {
+			width: 50% !important;
+			position: relative !important;
+			left: auto !important;
+			top: auto !important;
+		}
+
+		@include media('<tablet') {
+			width: 100% !important;
+		}
+
+		// &:before,
+		// &:after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	bottom: 0;
+		// 	left: -5px;
+		// 	top: -9999px;
+		// 	width: 10px;
+		// 	background: url('/wp-content/themes/a16z-2015/client/images/gl/plus-vertical.png') repeat-y;
+		// 	z-index: -1;
+		// }
+
+		// &:after {
+		// 	left: auto;
+		// 	right: -5px;
+		// }
 
 		&.has-bg {
 
@@ -1442,6 +1857,10 @@ body {
 				right: 0;
 				bottom: 0;
 				left: 0;
+
+				@include media('<desktop') {
+					content: none;
+				}
 			}
 		}
 
@@ -1463,6 +1882,10 @@ body {
 			// padding: 28px;
 			text-decoration: none;
 			position: relative;
+
+			@include media('<desktop') {
+				padding-top: 94.67% !important;
+			}
 
 			&:hover {
 				z-index: 100;
@@ -1526,17 +1949,45 @@ body {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
+
+				@include media('<widescreen') {
+					padding: 15px;
+				}
+
+				@include media('<desktop') {
+					padding: 28px;
+				}
 			}
 		}
 	}
 
 	.img-wrap {
 		width: 100%;
-		min-height: 161px;
+		height: 161px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
+
+		@include media('<widescreen') {
+			height: 90px;
+		}
+
+		@include media('<desktop') {
+			height: 146px;
+		}
+
+		img {
+
+			@include media('<widescreen') {
+				height: 100%;
+				object-fit: contain;
+			}
+
+			@include media('<desktop') {
+				width: 50%;
+			}
+		}
 	}
 
 	h3 {
@@ -1544,6 +1995,14 @@ body {
 		color: #082d42;
 		margin-bottom: 25px;
 		transition: color 0.3s linear;
+
+		@include media('<widescreen') {
+			font-size: 30px;
+		}
+
+		@include media('<desktop') {
+			font-size: 35px;
+		}
 	}
 
 	.gl-more-link {
@@ -1558,6 +2017,10 @@ body {
 .h-wrap {
 	margin-bottom: 56px;
 	text-align: center;
+
+	@include media('<desktop') {
+		margin-bottom: 40px;
+	}
 }
 
 .h-w-period {
@@ -1566,6 +2029,11 @@ body {
 	vertical-align: bottom;
 	color: #082D42;
 	margin: 0;
+
+	@include media('<desktop') {
+		font-size: 40px;
+		font-weight: 400;
+	}
 
 	&.is-white {
 		color: $white;
@@ -1579,6 +2047,11 @@ body {
 		height: 10px;
 		background: $avocado;
 		margin: 0 0 9px 9px;
+
+		@include media('<desktop') {
+			width: 8px;
+			height: 8px;
+		}
 	}
 }
 
