@@ -1,0 +1,42 @@
+.cm-portfolio {
+	.container {
+		max-width: 1458px;
+	}
+}
+
+.cm-portfolio-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-auto-flow: dense;
+	font-family: 'Proxima Nova', 'Helvetica Neue', 'Arial', 'Helvetica', sans-serif;
+	font-size: 26px;
+	line-height: 1.2308;
+	text-transform: capitalize;
+	gap: 19px 20px;
+
+	a {
+		color: #1B332D;
+		transition: color 0.3s linear;
+		text-decoration: none;
+
+		&:hover {
+			color: #F5564E;
+		}
+	}
+
+	li {
+		border-bottom: 1px solid #1B332D;
+		padding: 10px 0px 10px 10px;
+
+		&.double-height {
+			grid-row: span 2;
+		}
+
+		&.double-width-left {
+			grid-column: 4/2;
+		}
+	}
+}
