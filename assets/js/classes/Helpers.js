@@ -128,7 +128,7 @@ export const SlickCarousel = () => {
         arrows: false,
         rows: 0,
         // autoplay: true,
-        infinite: false,
+        infinite: true,
         dots: true,
         centerPadding: '50px'
     });
