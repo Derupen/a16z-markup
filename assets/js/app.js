@@ -6,4 +6,5 @@ $(document).ready(function($){
     Helper.SlickCarousel();
     Helper.niceSelect();
     Helper.inlineSVG();
+    Helper.openClose();
 });

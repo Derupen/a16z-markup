@@ -17,6 +17,10 @@ body {
 		right: -396px;
 		background: linear-gradient(180deg, #F6F7F7 41.2%, rgba(246, 247, 247, 0) 78.57%);
 		transform: rotate(-40deg);
+
+		@include media('<tablet') {
+			top: -120px;
+		}
 	}
 
 	.container {
@@ -30,7 +34,7 @@ body {
 
 	#main {
 		position: relative;
-		z-index: 1;
+		z-index: 2;
 		padding-top: 65px;
 		margin-top: -65px;
 
@@ -70,6 +74,10 @@ body {
 		padding: 80px 0;
 	}
 
+	@include media('<tablet') {
+		min-height: 460px;
+	}
+
 	.bg {
 		position: absolute;
 		top: 0;
@@ -96,6 +104,7 @@ body {
 
 		@include media('<tablet') {
 			width: 100px;
+			margin-bottom: 25px;
 		}
 	}
 
@@ -145,7 +154,71 @@ body {
 	margin-bottom: 107px;
 
 	@include media('<tablet') {
-		display: none;
+		position: fixed;
+		top: 92px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
+		z-index: 9998;
+		pointer-events: none;
+	}
+
+	&:before {
+
+		@include media('<tablet') {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			padding: 0;
+			height: 75px;
+			background: url('/wp-content/themes/a16z-2015/client/images/gl/shadow.png') no-repeat 50% 0 / contain;
+			pointer-events: none;
+		}
+	}
+
+	.sub-nav-opener {
+		position: absolute;
+		top: 0;
+		left: 20px;
+		right: 0;
+		width: 90px;
+		height: 30px;
+		background: url('/wp-content/themes/a16z-2015/client/images/gl/bg-nav-opener.svg') no-repeat 0 0 / 90px 30px;
+		z-index: 9999;
+		pointer-events: auto;
+
+		@include media('>=tablet') {
+			display: none;
+		}
+
+		&:after {
+			content: "\e90d";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font: 12px/1 "icomoon";
+			color: $white;
+			transition: transform 0.3s linear;
+		}
+
+		&.active {
+
+			&:after {
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+
+			+ .nav-list {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
 	}
 
 	.container {
@@ -154,26 +227,68 @@ body {
 		align-items: center;
 		justify-content: center;
 
-		ul {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			font: 600 18px/1.22 $proxima;
+		.nav-list {
 
-			@include media('<desktop') {
-				font-size: 16px;
+			@include media('>=tablet') {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				font: 600 16px/1.22 $proxima;
+				display: flex !important;
+			}
+
+			@include media('>=desktop') {
+				font-size: 18px;
+			}
+
+			@include media('<tablet') {
+				display: block !important;
+				height: auto !important;
+				position: fixed;
+				top: 92px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: calc(100vh - 92px);
+				background: $white;
+				padding: 50px 20px !important;
+				font-size: 22px;
+				font-weight: 600;
+				overflow: auto;
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s linear, visibility 0.3s linear, height 0.3s linear;
+				pointer-events: auto;
 			}
 
 			li {
+
+				+ li {
+
+					@include media('<tablet') {
+						margin-top: 20px;
+					}
+				}
 
 				a:not(.button) {
 					text-decoration: none;
 					color: $bayside;
 
+					@include media('<tablet') {
+						display: block;
+					}
+
 					&:hover {
 						color: $avocado;
+					}
+				}
+
+				.button {
+
+					@include media('<tablet') {
+						width: 100%;
 					}
 				}
 			}
@@ -233,6 +348,11 @@ body {
 				padding-left: 25px;
 				padding-right: 25px;
 			}
+
+			@include media('<tablet') {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
 		}
 	}
 }
@@ -273,6 +393,10 @@ body {
 		top: -4px;
 		left: 45px;
 	}
+
+	@include media('<tablet') {
+		left: 35px;
+	}
 }
 
 .gl-thesis {
@@ -289,7 +413,7 @@ body {
 		position: relative;
 
 		@include media('<tablet') {
-			padding: 80px 0;
+			padding: 80px 10px 112px;
 		}
 	}
 
@@ -298,6 +422,10 @@ body {
 
 		+ .text-row {
 			margin-top: 91px;
+
+			@include media('<tablet') {
+				margin-top: 122px;
+			}
 
 			&:before {
 				content: "";
@@ -318,11 +446,19 @@ body {
 
 	.portfolio-content {
 		padding: 72px 0 203px;
+
+		@include media('<tablet') {
+			padding: 42px 0 136px;
+		}
 	}
 
 	.h-wrap {
 		text-align: center;
 		margin-bottom: 56px;
+
+		@include media('<tablet') {
+			margin-bottom: 34px;
+		}
 	}
 }
 
@@ -335,7 +471,8 @@ body {
 
 		@include media('<tablet') {
 			position: relative;
-			padding-top: 50px;
+			padding-top: 60px;
+			margin-bottom: 21px;
 		}
 	}
 
@@ -480,6 +617,12 @@ body {
 			transform: translateY(-50%);
 			left: 0;
 			background: url('/wp-content/themes/a16z-2015/client/images/gl/icon-search-green.svg') no-repeat 0 0/ 34px 24px;
+
+			@include media('<tablet') {
+				width: 13px;
+				height: 13px;
+				background-size: 13px 13px;
+			}
 		}
 
 		input[type="search"] {
@@ -495,6 +638,10 @@ body {
 			text-transform: uppercase;
 			letter-spacing: 0.5px;
 			background: none;
+
+			@include media('<tablet') {
+				padding: 10px 25px;
+			}
 		}
 	}
 
@@ -524,6 +671,7 @@ body {
 			@include media('<tablet') {
 				width: auto;
 				min-width: 206px;
+				min-height: 46px;
 			}
 		}
 	}
@@ -1020,6 +1168,12 @@ body {
 	font-weight: 300;
 	letter-spacing: 0.005em;
 
+	@include media('<tablet') {
+		font-size: 16px;
+		line-height: 20px;
+		padding:  51px 4px 0;
+	}
+
 	a {
 		color: $bayside;
 	}
@@ -1106,10 +1260,13 @@ body {
 		bottom: 0;
 		left: 0;
 		background: linear-gradient(179.27deg, #082D42 -2.54%, #0660A1 5.02%, rgba(214, 229, 181, 0.2) 78.2%);
-		z-index: 1;
 
 		@include media('<desktop') {
 			top: -63px;
+		}
+
+		@include media('<tablet') {
+			z-index: 1;
 		}
 	}
 
@@ -1133,6 +1290,10 @@ body {
 			padding-top: 42px;
 		}
 
+		@include media('<tablet') {
+			padding-bottom: 106px;
+		}
+
 		.animated-border {
 			border-color: #082D42;
 		}
@@ -1144,6 +1305,10 @@ body {
 
 	@include media('<desktop') {
 		padding: 0 0 96px;
+	}
+
+	@include media('<tablet') {
+		padding: 0 0 106px;
 	}
 
 	.heading {
@@ -1159,11 +1324,21 @@ body {
 			margin-bottom: 93px;
 		}
 
+		@include media('<tablet') {
+			font-size: 18px;
+			line-height: 22px;
+			margin-bottom: 26px;
+		}
+
 		.h-wrap {
 			margin-bottom: 30px;
 
 			@include media('<desktop') {
 				min-height: 42px;
+			}
+
+			@include media('<tablet') {
+				margin-bottom: 36px;
 			}
 		}
 	}
@@ -1176,6 +1351,7 @@ body {
 		padding-bottom: 142px;
 
 		@include media('<tablet') {
+			padding-top: 40px;
 			padding-bottom: 62px;
 		}
 	}
@@ -1186,6 +1362,10 @@ body {
 		text-align: center;
 		font-size: 18px;
 		line-height: 1.111;
+
+		@include media('<tablet') {
+			font-size: 14px;
+		}
 
 		.h-wrap {
 			margin-bottom: 33px;
@@ -1200,6 +1380,11 @@ body {
 		font: 500 40px/1.2 $visby-slab-cf;
 		color: #083653;
 		margin-bottom: 45px;
+
+		@include media('<tablet') {
+			font-size: 32px;
+			margin-bottom: 30px;
+		}
 	}
 }
 
@@ -1451,7 +1636,8 @@ body {
 		background-image: url('/wp-content/themes/a16z-2015/client/images/gl/banner-gtgm-mob.svg');
 		background-position: 50% 50%;
 		text-align: center;
-		min-height: 308px;
+		min-height: 246px;
+		padding: 62px 0 75px;
 	}
 
 	.container {
@@ -1474,6 +1660,7 @@ body {
 
 		@include media('<tablet') {
 			font-size: 28px;
+			margin-bottom: 23px;
 		}
 	}
 
@@ -1484,11 +1671,19 @@ body {
 		@include media('<desktop') {
 			margin-bottom: 20px;
 		}
+
+		@include media('<tablet') {
+			margin-bottom: 23px;
+		}
 	}
 
-	.bn {
+	.btn {
 		padding: 12px 25px;
 		font-size: 18px;
+
+		@include media('<tablet') {
+			font-size: 16px;
+		}
 	}
 }
 
@@ -1558,6 +1753,11 @@ body {
 			margin: 0 -15px 0 -10px;
 			overflow: hidden;
 			padding-bottom: 39px;
+		}
+
+		@include media('<tablet') {
+			margin: 0;
+			padding-bottom: 42px;
 		}
 
 		&:after,
@@ -1777,6 +1977,10 @@ body {
 	align-items: flex-end;
 	justify-content: flex-end;
 
+	@include media('<tablet') {
+		padding: 0 12px;
+	}
+
 	.tiles-wrapper {
 		width: 100%;
 		position: relative;
@@ -1884,7 +2088,7 @@ body {
 			position: relative;
 
 			@include media('<desktop') {
-				padding-top: 94.67% !important;
+				padding-top: 94.7% !important;
 			}
 
 			&:hover {
@@ -2003,6 +2207,10 @@ body {
 		@include media('<desktop') {
 			font-size: 35px;
 		}
+
+		@include media('<tablet') {
+			font-size: 30px;
+		}
 	}
 
 	.gl-more-link {
@@ -2020,6 +2228,11 @@ body {
 
 	@include media('<desktop') {
 		margin-bottom: 40px;
+	}
+
+	@include media('<tablet') {
+		padding: 0 10px;
+		margin-bottom: 31px;
 	}
 }
 
@@ -2051,6 +2264,10 @@ body {
 		@include media('<desktop') {
 			width: 8px;
 			height: 8px;
+		}
+
+		@include media('<tablet') {
+			margin: 0 0 6px 4px;
 		}
 	}
 }

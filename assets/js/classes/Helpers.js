@@ -208,3 +208,43 @@ export const inlineSVG = () => {
     }
   });
 }
+
+
+export const openClose = () => {
+    $('[data-more]').next().hide();
+    $('[data-more].active').next().show();
+
+    $('[data-more]').click(function(e) {
+        e.preventDefault();
+        $(this).hasClass('active') ? $(this).removeClass('active').next().slideUp(200) : $(this).addClass('active').next().slideToggle(200);
+
+        if($(this).closest('[data-accordion]').length) {
+            $(this).addClass('life');
+            $(this).parent().siblings().find('[data-more]').removeClass('active');
+            $(this).parent().siblings().find('[data-more]').next().slideUp(200);
+        }
+    })
+
+    $('[data-outside]').next().find('a:not(.hasdrop-a):not([data-more])').click(function() {
+        $('[data-outside]').removeClass('active').next('').slideUp(200);
+    });
+    $('[data-outside]').click(function(e) {
+        $('[data-outside]').not(this).removeClass('active').next().slideUp(200);
+    });
+
+    $('html').on('click touchstart pointerdown MSPointerDown', function(e) {
+        var target = $(e.target);
+
+        if(!(target.closest('[data-outside]').length) && !(target.closest('[data-outside] + *').length)) {
+            setTimeout (function() {
+                $('[data-outside]').removeClass('active').next().slideUp(200);
+            }, 200)
+        }
+
+        if(!(target.closest('[data-outside-1]').length) && !(target.closest('[data-outside-1] + *').length)) {
+            setTimeout (function() {
+                $('[data-outside-1]').removeClass('active').next().slideUp(200);
+            }, 200)
+        }
+    });
+}
